@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Data & model weights (too large for git, regenerate locally)
+dataset/train/*
+dataset/val/*
+dataset/test/*
+!dataset/train/.gitkeep
+!dataset/val/.gitkeep
+!dataset/test/.gitkeep
+models/*.pt
+models/classes.txt
+!models/.gitkeep
+runs/
+
+# Results (regenerate via evaluate_models.py; keep folder tracked, drop contents)
+results/*.png
+results/*.txt
+!results/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
