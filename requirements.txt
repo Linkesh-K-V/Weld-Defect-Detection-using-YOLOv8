@@ -1,0 +1,27 @@
+# Weld Defect Detection & Classification — Environment Requirements
+# Tested target: Windows 11 + NVIDIA RTX 3050 Ti Laptop GPU + CUDA 12.1
+
+# ---- Core ----
+torch>=2.2.0
+torchvision>=0.17.0
+ultralytics>=8.2.0        # YOLOv8
+
+# ---- Data / eval / viz ----
+opencv-python>=4.9.0
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.4.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+Pillow>=10.2.0
+lxml>=5.1.0               # fast VOC XML parsing
+tqdm>=4.66.0
+
+# ---- Install notes ----
+# 1) Install NVIDIA driver + CUDA Toolkit 12.1 (or whatever your driver supports) FIRST.
+# 2) Install the CUDA-matched torch build, e.g.:
+#      pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# 3) Then install everything else:
+#      pip install -r requirements.txt
+# 4) Verify GPU:
+#      python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
